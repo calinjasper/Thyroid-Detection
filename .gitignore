@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+DATASET/
+Deploy/project/media/
+Deploy/project/staticfiles/
+ipynb_checkpoints/

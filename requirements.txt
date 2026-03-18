@@ -1,0 +1,9 @@
+Django==4.0.3
+tensorflow
+keras
+numpy
+Pillow
+matplotlib
+IPython
+scikit-learn
+joblib

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% comment %} <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:url("/static/images/A1.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .container{
+            width: 400px;
+            height: 200px;
+            border-style: solid;
+            background-color: rgb(143, 141, 138, 0.3);
+        }
+        form{
+            margin-top: 50px;
+            margin-left: 40px;
+        }
+        </style>
+</head>
+<body>
+    <center><h1 style="color: white;">DIAGNOSIS OF LUNG AND COLON CANCER BY USING CONVOLUTION NEURAL NETWORK TECHNIQUES</h1><br><br><br>
+        <div class="container">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p style="margin-right: 170px;">*  This field is requied</p>
+            {{ form.as_p }}
+            <input sy type="submit" Value='UPLOAD' style="margin-right: 230px;">
+        </form><br><br><br><br>
+        </div>
+    </center>
+    {% if obj %}
+    <center>
+        <h2 style="color: white;">{{predict | upper}}<h2>
+        <img src="{{ obj.image.url }}" height="200" width="200">
+    </center>
+    {% endif %}
+</body>
+</html> {% endcomment %}
+<center><h1 class="text-xl font-serif">AI-Powered Thyroid Detection: Revolutionizing Diagnosis</h1></center>
+<div class="flex w-full h-screen items-center justify-center bg-grey-lighter">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <label class="px-8 w-100 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-white">
+        <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            
+            <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+        </svg>
+        <span class="mt-2 text-base leading-normal">Select a file</span>
+        <center><h1 class="ml-20">{{ form.as_p }}</h1></center>
+        
+        
+    </label>
+    {% if obj %}
+    <center>
+        <h2 style="color: white;">{{predict | upper}}<h2>
+        <img src="{{ obj.image.url }}" height="200" width="200">
+    </center>
+    {% endif %}
+
+    <button type="submit" class="middle none pt-18 center mb-40 ml-48 rounded-lg bg-red-500 py-3 px-8 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Submit</button>
+    </form>
+</div>
+{% endblock content %}
